@@ -12,10 +12,16 @@ end
 
 def consolidate_cart(cart)
   index = 0
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+  new_cart = []
+  
+  while index < cart.length do
+    item = find_item_by_name_in_collection(cart[index][:item], new_cart)
+    if item
+      new_cart_index = 0
+      while new_cart_index < new_cart.length do
+        if new_cart[new_cart_index][:item] === item[:item]
+          new_cart[new_cart_index][:count] += 1
+  
 
 end
 
